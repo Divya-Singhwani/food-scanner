@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 14px 16px;
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
   z-index: 20;
@@ -61,7 +61,85 @@ body {
   font-weight: 600;
 }
 
-/* SCREEN 3: CAMERA VIEWPORT */
+/* NAVIGATION TABS */
+.app-nav-tabs {
+  display: flex;
+  justify-content: space-around;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 8px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+/* LOGIN SCREEN */
+.login-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  min-height: 85vh;
+  text-align: center;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.login-input:focus {
+  border-color: #10b981;
+}
+
+.login-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* CAMERA VIEWPORT */
 .camera-view {
   flex: 1;
   display: flex;
@@ -109,10 +187,10 @@ body {
   background: rgba(255, 255, 255, 0.9);
   padding: 6px 14px;
   border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-/* BOTTOM CONTROLS (CAMERA + GALLERY) */
+/* BOTTOM CONTROLS */
 .bottom-bar {
   padding: 20px;
   background-color: #ffffff;
@@ -164,7 +242,7 @@ body {
   transform: scale(0.92);
 }
 
-/* SCREEN 4: PROCESSING */
+/* PROCESSING SCREEN */
 .processing-view {
   flex: 1;
   display: flex;
@@ -190,84 +268,190 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* SCREEN 5: RESULT VIEW */
+/* RESULT VIEW */
 .result-view {
   flex: 1;
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   overflow-y: auto;
   background-color: #ffffff;
 }
 
-.preview-thumbnail {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 14px;
+.summary-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.product-img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 4px;
   border: 1px solid #e2e8f0;
 }
 
-.product-title {
-  font-size: 20px;
+.product-info {
+  flex: 1;
+}
+
+.editable-title-input {
+  font-size: 16px;
   font-weight: 700;
-  color: #0f172a;
+  color: #1e293b;
+  border: none;
+  border-bottom: 1.5px dashed #cbd5e1;
+  background: transparent;
+  width: 100%;
+  outline: none;
+  padding-bottom: 2px;
+  margin-bottom: 4px;
 }
 
-.badge {
-  padding: 12px;
-  border-radius: 12px;
-  font-weight: 800;
-  text-align: center;
-  font-size: 14px;
-}
-.badge.avoid { 
-  background-color: #fee2e2; 
-  color: #991b1b; 
-  border: 1px solid #fecaca; 
-}
-.badge.safe { 
-  background-color: #d1fae5; 
-  color: #065f46; 
-  border: 1px solid #a7f3d0; 
+.editable-title-input:focus {
+  border-bottom-color: #10b981;
 }
 
-.section-label {
-  font-size: 11px;
-  text-transform: uppercase;
+.product-info p {
+  font-size: 12px;
   color: #64748b;
-  font-weight: 700;
+  margin: 0;
+}
+
+/* DHYAN DEIN / CAUTION STATEMENT */
+.caution-box {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.caution-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #c2410c;
+  margin-bottom: 4px;
   letter-spacing: 0.5px;
 }
 
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.metric-card {
-  background-color: #f8fafc;
-  padding: 12px 6px;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px solid #e2e8f0;
-}
-.metric-card .label { font-size: 11px; color: #64748b; font-weight: 600; }
-.metric-card .val { font-size: 12px; font-weight: 800; margin-top: 4px; }
-
-.audio-script-box {
-  background-color: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-style: italic;
-  color: #334155;
+.caution-desc {
+  font-size: 12px;
+  color: #7c2d12;
   line-height: 1.4;
+  margin: 0;
 }
 
+/* CALORIE ESTIMATION BANNER */
+.calorie-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.cal-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.cal-highlight {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ef4444;
+}
+
+/* NUTRITION SUMMARY WITH ICONS & PROGRESS BARS */
+.nutrition-summary-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 14px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+.summary-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.per-serving {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.nutrient-row {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.nutrient-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nutrient-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.progress-track {
+  width: 100%;
+  height: 5px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.nutrient-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  min-width: 65px;
+  text-align: right;
+}
+
+/* BUTTONS */
 .audio-btn {
   background-color: #10b981;
   color: #ffffff;
@@ -282,6 +466,7 @@ body {
   gap: 8px;
   font-size: 14px;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  width: 100%;
 }
 
 .reset-btn {
@@ -293,4 +478,196 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 13px;
+  width: 100%;
+}
+
+/* DATE-WISE SCAN HISTORY */
+.history-view {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.date-group-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  margin: 14px 0 8px 0;
+  text-transform: uppercase;
+}
+
+.history-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-1px);
+  border-color: #10b981;
+}
+
+.history-card:active {
+  transform: scale(0.98);
+}
+
+.history-card h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.history-card p {
+  margin: 0;
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.history-cal-tag {
+  font-size: 13px;
+  font-weight: 800;
+  color: #059669;
+}
+
+/* COMPARISON STYLES */
+.compare-header-box {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border: 1.5px solid #a7f3d0;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.compare-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #065f46;
+  font-weight: 800;
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+
+.compare-recommendation {
+  font-size: 12px;
+  color: #1e293b;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.compare-recommendation strong {
+  color: #059669;
+}
+
+.compare-breakdown-btn {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.2);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 50;
+  backdrop-filter: blur(2px);
+}
+
+.compare-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.25s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-header h3 {
+  font-size: 15px;
+  color: #0f172a;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: #f1f5f9;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  margin-top: 10px;
+}
+
+.compare-table th, .compare-table td {
+  padding: 10px 6px;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.compare-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.compare-table td:first-child, .compare-table th:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.best-choice-badge {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 3px;
 }
